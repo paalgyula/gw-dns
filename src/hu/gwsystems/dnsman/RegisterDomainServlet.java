@@ -6,6 +6,7 @@ import hu.gwsystems.dnsman.entity.Users;
 import java.io.IOException;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,10 +22,20 @@ public class RegisterDomainServlet extends HttpServlet {
 		
 		EntityManager em = PMgr.getInstance().createEntityManager();
 		
+		
 		// Domain ketszeri felvetelenek tiltasa...
-		if ( em.createQuery( "select d from DnsDomain d where d.domainName = :NAME" ).setParameter( ":NAME", domain ).getResultList().size() != 0 ) {
-			resp.sendRedirect( "registerDomain.jsp?success=0&error=duplicate&domain=" + domain );
-			return;
+		try {
+			Query query = em.createQuery( "select count( d ) from DnsDomain d where d.domainName = ?0" );
+			query.setParameter( 0, domain );
+			
+			if ( (Integer)query.getSingleResult() != 0 ) {
+				resp.sendRedirect( "registerDomain.jsp?success=0&error=duplicate&domain=" + domain );
+				em.close();
+				return;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println( "Empty set?" );
 		}
 		
 		DnsDomain dd = new DnsDomain();
