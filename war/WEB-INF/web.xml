@@ -6,6 +6,12 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<!-- Listener to initialize Spring and Hibernate on first Servlet request -->
 
+	<listener>
+		<listener-class>
+			hu.gwsystems.dnsman.DnsContextListener
+		</listener-class>
+	</listener>
+
 	<servlet>
 		<servlet-name>loginServlet</servlet-name>
 		<servlet-class>hu.gwsystems.dnsman.servlets.LoginServlet</servlet-class>
