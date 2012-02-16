@@ -1,0 +1,5 @@
+
+syntax: glob
+app-engine-generated
+syntax: regexp
+^war/WEB-INF/appengine-generated$
