@@ -14,36 +14,17 @@ public class DnsRecords implements Serializable {
 	private static final long serialVersionUID = -1298687397451L;
 
 	@Id
-	@SequenceGenerator(name="DNSRECORD_SEQ", sequenceName="DNSRECORD_SEQ")
+	@SequenceGenerator(name="DNSRECORD_SEQ", sequenceName="DNSRECORD_SEQ", allocationSize=1, initialValue=0)
 	@GeneratedValue(generator="DNSRECORD_SEQ", strategy=GenerationType.SEQUENCE)
-	@Column
-	private Integer id;
-	
-	private DnsDomain domain;
-	
-	@Column
-	private String name;
-	
-	@Column
-	private String value;
-	
-	@Column
-	private int TTL;
-	
-	@Column
-	private int priority;
-
+	@Column private Integer id;	
+	@Column String domainId;
+	@Column	private String name;
+	@Column private String value;
+	@Column	private int TTL;
+	@Column private int priority;
 	
 	public int getId() {
 		return id;
-	}
-
-	public DnsDomain getDomain() {
-		return domain;
-	}
-
-	public void setDomain(DnsDomain domain) {
-		this.domain = domain;
 	}
 
 	public String getName() {
@@ -76,5 +57,13 @@ public class DnsRecords implements Serializable {
 
 	public void setPriority(int priority) {
 		this.priority = priority;
+	}
+
+	public String getDomainId() {
+		return domainId;
+	}
+
+	public void setDomainId(String domainId) {
+		this.domainId = domainId;
 	}
 }

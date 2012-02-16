@@ -14,7 +14,7 @@ public class DnsDomain implements Serializable {
 	private static final long serialVersionUID = -23587623231L;
 
 	@Id
-	@SequenceGenerator(name="DNSDOMAIN_SEQ", sequenceName="DNSDOMAIN_SEQ")
+	@SequenceGenerator(name="DNSDOMAIN_SEQ", sequenceName="DNSDOMAIN_SEQ", allocationSize=1, initialValue=0)
 	@GeneratedValue(generator="DNSDOMAIN_SEQ", strategy=GenerationType.SEQUENCE)
 	@Column
 	private Long id;
