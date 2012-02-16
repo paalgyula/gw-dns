@@ -9,6 +9,7 @@
 <body>
 	<form name="adddomain" method="post" action="registerDomain.do">
 		Domain neve: <input type="text" name="domain"/><br/>
+		<input type="submit" value="register">
 	</form>
 </body>
 </html>
