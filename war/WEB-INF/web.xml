@@ -8,7 +8,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<servlet>
 		<servlet-name>loginServlet</servlet-name>
-		<servlet-class>hu.gwsystems.dnsman.LoginServlet</servlet-class>
+		<servlet-class>hu.gwsystems.dnsman.servlets.LoginServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>loginServlet</servlet-name>
@@ -17,7 +17,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>registerServlet</servlet-name>
-		<servlet-class>hu.gwsystems.dnsman.RegisterServlet</servlet-class>
+		<servlet-class>hu.gwsystems.dnsman.servlets.RegisterServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>registerServlet</servlet-name>
@@ -26,7 +26,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	c<servlet>
 		<servlet-name>listServlet</servlet-name>
-		<servlet-class>hu.gwsystems.dnsman.DomainListServlet</servlet-class>
+		<servlet-class>hu.gwsystems.dnsman.servlets.DomainListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>listServlet</servlet-name>
@@ -35,20 +35,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	
 	<servlet>
 		<servlet-name>registerDomainServlet</servlet-name>
-		<servlet-class>hu.gwsystems.dnsman.RegisterDomainServlet</servlet-class>
+		<servlet-class>hu.gwsystems.dnsman.servlets.RegisterDomainServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>registerDomainServlet</servlet-name>
 		<url-pattern>/registerDomain.do</url-pattern>
 	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>testServlet</servlet-name>
-		<servlet-class>hu.gwsystems.dnsman.testServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>testServlet</servlet-name>
-		<url-pattern>/guestbook</url-pattern>
-	</servlet-mapping>
-	
 </web-app>

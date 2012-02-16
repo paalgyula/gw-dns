@@ -1,5 +1,6 @@
-package hu.gwsystems.dnsman;
+package hu.gwsystems.dnsman.servlets;
 
+import hu.gwsystems.dnsman.PMgr;
 import hu.gwsystems.dnsman.entity.DnsDomain;
 
 import java.io.IOException;

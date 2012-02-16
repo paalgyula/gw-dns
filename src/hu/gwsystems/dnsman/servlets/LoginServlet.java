@@ -1,4 +1,4 @@
-package hu.gwsystems.dnsman;
+package hu.gwsystems.dnsman.servlets;
 
 import java.io.IOException;
 
