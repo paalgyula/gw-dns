@@ -24,13 +24,22 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<url-pattern>/register.do</url-pattern>
 	</servlet-mapping>
 
-	c<servlet>
-		<servlet-name>listServlet</servlet-name>
+	<servlet>
+		<servlet-name>transferServlet</servlet-name>
+		<servlet-class>hu.gwsystems.dnsman.servlets.TransferListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>transferServlet</servlet-name>
+		<url-pattern>/transfer</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>domainListServlet</servlet-name>
 		<servlet-class>hu.gwsystems.dnsman.servlets.DomainListServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>listServlet</servlet-name>
-		<url-pattern>/domainList</url-pattern>
+		<servlet-name>domainListServlet</servlet-name>
+		<url-pattern>/domainList.do</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
