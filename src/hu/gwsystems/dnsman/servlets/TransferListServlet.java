@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class DomainListServlet extends HttpServlet {
+public class TransferListServlet extends HttpServlet {
 	private static final long serialVersionUID = -4583906174321725426L;
 
 	@Override
