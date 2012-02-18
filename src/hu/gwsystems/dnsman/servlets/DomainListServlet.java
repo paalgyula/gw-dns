@@ -1,9 +1,9 @@
 package hu.gwsystems.dnsman.servlets;
 
-import hu.gwsystems.dnsman.DnsContextListener;
 import hu.gwsystems.dnsman.PMgr;
 import hu.gwsystems.dnsman.entity.DnsDomain;
-import hu.gwsystems.dnsman.mav.ModelAndView;
+import hu.gwsystems.mvc.MVCContextListener;
+import hu.gwsystems.mvc.mav.ModelAndView;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,6 +15,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 public class DomainListServlet extends HttpServlet {
 	
@@ -29,6 +30,6 @@ public class DomainListServlet extends HttpServlet {
         Map<String, Object> root = new HashMap<String, Object>();
         root.put("domains", ddList );
         
-        DnsContextListener.getViewResolver().resolve( new ModelAndView( root, "list" ) , resp );
+        MVCContextListener.getViewResolver().resolve( new ModelAndView( root, "list" ) , resp );
 	}
 }

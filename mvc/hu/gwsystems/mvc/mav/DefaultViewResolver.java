@@ -1,4 +1,4 @@
-package hu.gwsystems.dnsman.mav;
+package hu.gwsystems.mvc.mav;
 
 import java.io.File;
 import java.io.IOException;

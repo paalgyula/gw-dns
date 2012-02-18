@@ -8,7 +8,7 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 
 	<listener>
 		<listener-class>
-			hu.gwsystems.dnsman.DnsContextListener
+			hu.gwsystems.mvc.MVCContextListener
 		</listener-class>
 	</listener>
 
@@ -55,5 +55,14 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>registerDomainServlet</servlet-name>
 		<url-pattern>/registerDomain.do</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>mvcServlet</servlet-name>
+		<servlet-class>hu.gwsystems.mvc.PageResolverServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mvcServlet</servlet-name>
+		<url-pattern>*.dns</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -1,13 +1,13 @@
-package hu.gwsystems.dnsman;
+package hu.gwsystems.mvc;
 
-import hu.gwsystems.dnsman.mav.DefaultViewResolver;
-import hu.gwsystems.dnsman.mav.ViewResolver;
+import hu.gwsystems.mvc.mav.DefaultViewResolver;
+import hu.gwsystems.mvc.mav.ViewResolver;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
-public class DnsContextListener implements ServletContextListener {
+public class MVCContextListener implements ServletContextListener {
 
 	private static ServletContext servletContext;
 	private static ViewResolver viewResolver;
