@@ -2,13 +2,38 @@ package hu.gwsystems.mvc;
 
 import hu.gwsystems.dnsman.PMgr;
 
-import javax.persistence.EntityManager;
+import java.util.Map;
+
+import javax.persistence.EntityManagerFactory;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
-public abstract class AbstractController {
-	protected EntityManager em;
+public class AbstractController {
+	protected EntityManagerFactory emf;
+	private HttpServletRequest req;
+	
+	protected HttpSession session;
+	protected Map<String, Object> params;
+	
+	protected RequestMethod method;
+	
+	@SuppressWarnings("unchecked")
+	public void setRequest( HttpServletRequest req ) {
+		this.req = req;
+		this.session = req.getSession();
+		this.params = req.getParameterMap();
+	}
+	
+	public void setRequestMethod(RequestMethod method) {
+		this.method = method;
+	}
 	
 	public AbstractController() {
-		em = PMgr.getInstance().createEntityManager();
+		emf = PMgr.getInstance();
+	}
+	
+	public HttpServletRequest getRequest() {
+		return this.req;
 	}
 }
